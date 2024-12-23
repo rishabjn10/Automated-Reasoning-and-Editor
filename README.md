@@ -1,56 +1,113 @@
-# Edu Crew
+Here's a simple yet effective **README.md** file for your project, outlining the purpose, setup instructions, and usage of the Docker and Docker Compose setup for running `crewai` flows.
 
-Welcome to the Edu Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+---
 
-## Installation
+### **README.md**  
+# 🚀 CrewAI Flow Runner (Dockerized)
 
-Ensure you have Python >=3.10 <=3.13 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
+This project provides a Dockerized solution to run `crewai` workflows in a clean, isolated environment. The output is saved in a shared directory accessible outside the container, allowing for easy inspection of results.  
 
-First, if you haven't already, install uv:
+---
 
-```bash
-pip install uv
+## 📁 **Project Structure**  
+```
+/my_project
+│
+├── Dockerfile               # Docker image setup
+├── docker-compose.yml       # Docker Compose configuration
+├── .dockerignore            # Files to ignore during Docker build
+├── requirements.txt         # Python dependencies
+├── crewai_flow.py           # Main crewai flow
+├── src/                     # Source code directory
+├── output/                  # Output results (mounted from Docker container)
+└── README.md                # Project documentation
 ```
 
-Next, navigate to your project directory and install the dependencies:
+---
 
-(Optional) Lock the dependencies and install them by using the CLI command:
+## 🛠️ **Setup and Installation**  
+
+### 1. **Prerequisites**  
+- Docker installed (https://docs.docker.com/get-docker/)  
+- Docker Compose installed (https://docs.docker.com/compose/install/)  
+- Python (Optional for local testing, not required for Docker)
+
+---
+
+### 2. **Clone the Repository**  
 ```bash
-crewai install
+git clone https://github.com/rishabjn10/Automated-Reasoning-and-Editor.git
+cd Automated-Reasoning-and-Editor
 ```
 
-### Customizing
+---
 
-**Add your `OPENAI_API_KEY` into the `.env` file**
-
-- Modify `src/edu_flow/config/agents.yaml` to define your agents
-- Modify `src/edu_flow/config/tasks.yaml` to define your tasks
-- Modify `src/edu_flow/crew.py` to add your own logic, tools and specific args
-- Modify `src/edu_flow/main.py` to add custom inputs for your agents and tasks
-
-## Running the Project
-
-To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
-
+### 3. **Install Dependencies (Optional, for local testing)**  
 ```bash
-crewai run
+pip install -r requirements.txt
 ```
 
-This command initializes the edu-flow Crew, assembling the agents and assigning them tasks as defined in your configuration.
+---
 
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
+## 🐳 **Docker Instructions**  
 
-## Understanding Your Crew
+### **1. Build the Docker Image**  
+```bash
+docker-compose build
+```
 
-The edu-flow Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
+### **2. Run the Container**  
+```bash
+docker-compose up
+```
+- The `crewai flow kickoff` command will run automatically.
+- Outputs will be saved in the `output/` directory on your local machine.
 
-## Support
+### **3. Stop the Container**  
+```bash
+docker-compose down
+```
 
-For support, questions, or feedback regarding the Edu Crew or crewAI.
+---
 
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
+## 📤 **Output Directory**  
+- The `output/` directory inside the container is linked to the same directory on your host machine.  
+- After running the workflow, check the results:  
+```bash
+ls output/
+```
 
-Let's create wonders together with the power and simplicity of crewAI.
+---
+
+## 🔄 **Rebuilding the Image (if needed)**  
+If you update the code or dependencies, rebuild the image:  
+```bash
+docker-compose build --no-cache
+```
+
+---
+## 🧹 **Cleaning Up**  
+To remove all stopped containers and dangling images:  
+```bash
+docker system prune
+```
+
+---
+
+## 📋 **Customization**  
+
+### Modify `requirements.txt`  
+Add any additional Python dependencies needed for your `crewai` workflow.
+
+### Update `docker-compose.yml`  
+Change the number of concurrent runners or adjust volume mappings.
+
+---
+
+## 📧 **Support**  
+For issues or suggestions, feel free to open an issue on the GitHub repository or contact me at [rishabjn10@gmail.com](mailto:rishabjn10@gmail.com).
+
+---
+
+## 📜 **License**  
+This project is licensed under the MIT License.  
