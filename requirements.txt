@@ -1,0 +1,3 @@
+crewai
+langtrace-python-sdk
+# Add other dependencies for your project here

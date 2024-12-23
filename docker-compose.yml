@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  crewai-runner:
+    build: .
+    container_name: crewai_runner
+    volumes:
+      - ./output:/app/output  # Map output directory
+    working_dir: /app
+    command: crewai flow kickoff

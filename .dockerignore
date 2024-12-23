@@ -1,0 +1,12 @@
+# Ignore unnecessary files and directories
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+*.venv
+.envrc
+.git/
+.gitignore
+output/  # We will map this directory explicitly outside Docker
