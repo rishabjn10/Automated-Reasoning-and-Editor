@@ -1,74 +1,39 @@
-Here's a simple yet effective **README.md** file for your project, outlining the purpose, setup instructions, and usage of the Docker and Docker Compose setup for running `crewai` flows.
+# Automated Reasoning and Editor  
 
----
+## Overview  
+This project provides an automated reasoning and editing tool powered by various AI APIs. It leverages Docker for containerization and orchestration.
 
-### **README.md**  
-# 🚀 CrewAI Flow Runner (Dockerized)
+## Requirements  
+- **Docker** (Ensure Docker is installed on your system)  
 
-This project provides a Dockerized solution to run `crewai` workflows in a clean, isolated environment. The output is saved in a shared directory accessible outside the container, allowing for easy inspection of results.  
+## Setup  
 
----
-
-## 📁 **Project Structure**  
-```
-/my_project
-│
-├── Dockerfile               # Docker image setup
-├── docker-compose.yml       # Docker Compose configuration
-├── .dockerignore            # Files to ignore during Docker build
-├── requirements.txt         # Python dependencies
-├── crewai_flow.py           # Main crewai flow
-├── src/                     # Source code directory
-├── output/                  # Output results (mounted from Docker container)
-└── README.md                # Project documentation
-```
-
----
-
-## 🛠️ **Setup and Installation**  
-
-### 1. **Prerequisites**  
-- Docker installed (https://docs.docker.com/get-docker/)  
-- Docker Compose installed (https://docs.docker.com/compose/install/)  
-- Python (Optional for local testing, not required for Docker)
-
----
-
-### 2. **Clone the Repository**  
+1. **Clone the Repository:**  
 ```bash
 git clone https://github.com/rishabjn10/Automated-Reasoning-and-Editor.git
 cd Automated-Reasoning-and-Editor
 ```
 
----
-
-### 3. **Install Dependencies (Optional, for local testing)**  
+2. **Create and Configure Environment Variables:**  
+- Copy `.env.example` to `.env` in the root directory:  
 ```bash
-pip install -r requirements.txt
+cp .env.example .env
+```
+- Open `.env` and update the following fields with your API keys:  
+```
+OPENAI_API_KEY=<your OpenAI API key>
+LANGTRACE_API_KEY=<your Langtrace API key>
+SERPER_API_KEY=<your Serper API key>
 ```
 
----
-
-## 🐳 **Docker Instructions**  
-
-### **1. Build the Docker Image**  
+3. **Start the Application:**  
 ```bash
-docker-compose build
+docker-compose up --force-recreate
 ```
 
-### **2. Run the Container**  
-```bash
-docker-compose up
-```
+## Usage  
 - The `crewai flow kickoff` command will run automatically.
 - Outputs will be saved in the `output/` directory on your local machine.
-
-### **3. Stop the Container**  
-```bash
-docker-compose down
-```
-
----
 
 ## 📤 **Output Directory**  
 - The `output/` directory inside the container is linked to the same directory on your host machine.  
@@ -76,38 +41,3 @@ docker-compose down
 ```bash
 ls output/
 ```
-
----
-
-## 🔄 **Rebuilding the Image (if needed)**  
-If you update the code or dependencies, rebuild the image:  
-```bash
-docker-compose build --no-cache
-```
-
----
-## 🧹 **Cleaning Up**  
-To remove all stopped containers and dangling images:  
-```bash
-docker system prune
-```
-
----
-
-## 📋 **Customization**  
-
-### Modify `requirements.txt`  
-Add any additional Python dependencies needed for your `crewai` workflow.
-
-### Update `docker-compose.yml`  
-Change the number of concurrent runners or adjust volume mappings.
-
----
-
-## 📧 **Support**  
-For issues or suggestions, feel free to open an issue on the GitHub repository or contact me at [rishabjn10@gmail.com](mailto:rishabjn10@gmail.com).
-
----
-
-## 📜 **License**  
-This project is licensed under the MIT License.  
