@@ -10,6 +10,6 @@ LLM_CONFIGS = {
 LLM_CONFIG = LLM_CONFIGS["openai"] # Change this to switch between LLMs
 
 EDU_FLOW_INPUT_VARIABLES = {
-    "audience_level": "intermediate",
-    "topic": "Automated reasoning"
+    "audience_level": "intermediate to experts",
+    "topic": "How to get benefits of a compiled language from an interpreted language like python "
 } 

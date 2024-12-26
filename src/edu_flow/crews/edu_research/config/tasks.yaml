@@ -1,17 +1,24 @@
 research_task:
   description: >
-    Conduct thorough research about {topic} based on the audience level {audience_level}.
-    Make sure you find any interesting and relevant information given the current year is 2024.
+    Conduct deep research on {topic} using search tools to uncover advanced techniques, hidden gems, and lesser-known strategies for {audience_level} learners.
+    Focus on finding novel approaches and innovative solutions that experienced practitioners may not be aware of, while ensuring the content remains accessible
+    to the target audience level. Make sure to find current and relevant information for 2024.
   expected_output: >
-    A thorough research report on {topic} with relevant information that can inspire educational content afterwards aimed at {audience_level}. The research report
-    should also include references to the sources you used to create the content.
+    A comprehensive research report on {topic} that reveals advanced and non-obvious insights, specifically curated for {audience_level} learners.
+    The report should include unique angles and clever techniques that even experienced practitioners might have missed, along with references
+    to all sources used to validate the findings.
   agent: researcher
 
 planning_task:
   description: >
-    Review the content you received and come up with a plan for an amazing and comprehensive educational content piece that is aimed at {audience_level}.
-    The plan should be highly detailed and comprehesive. 
+    Transform the research findings into an insightful and practical educational content plan that reveals advanced techniques and clever approaches to {topic},
+    specifically tailored for {audience_level} learners. Focus on delivering unique value that goes beyond common knowledge while maintaining appropriate
+    complexity for the target audience.
   expected_output: >
-    A detailed plan for an educational content piece that is aimed at {audience_level}. 
-    The plan shoudl be a series of sections, each section with a subtitle, high level goal, why it's important, and sources referenced.
+    A detailed content strategy plan organized into sections, where each section includes:
+    - A clear subtitle
+    - High-level learning goal
+    - Explanation of importance and relevance
+    - Referenced sources from the research
+    The plan should present advanced concepts in a way that resonates with {audience_level} learners while delivering unique value.
   agent: planner
