@@ -1,10 +1,10 @@
 # Automated Reasoning and Editor  
 
 ## Overview  
-This project provides an automated reasoning and editing tool powered by various AI APIs. It leverages Docker for containerization and orchestration.
+This project provides an automated reasoning and editing tool powered by various AI APIs.  
 
 ## Requirements  
-- **Docker** (Ensure Docker is installed on your system)  
+- **Python 3.11+** (Ensure Python is installed on your system)  
 
 ## Setup  
 
@@ -26,18 +26,31 @@ LANGTRACE_API_KEY=<your Langtrace API key>
 SERPER_API_KEY=<your Serper API key>
 ```
 
-3. **Start the Application:**  
+3. **Set Up a Virtual Environment:**  
+- **For Linux/Mac:**  
 ```bash
-docker-compose up --force-recreate
+python3 -m venv venv
+source venv/bin/activate
+```
+- **For Windows (Command Prompt):**  
+```bash
+python -m venv venv
+venv\Scripts\activate
 ```
 
-## Usage  
-- The `crewai flow kickoff` command will run automatically.
-- Outputs will be saved in the `output/` directory on your local machine.
+4. **Install Dependencies:**  
+```bash
+pip install -r requirements.txt
+```
+
+5. **Run the Application:**  
+```bash
+crewai flow kickoff
+```
 
 ## 📤 **Output Directory**  
-- The `output/` directory inside the container is linked to the same directory on your host machine.  
+- Outputs will be saved in the `output/` directory.  
 - After running the workflow, check the results:  
 ```bash
 ls output/
-```
+```  

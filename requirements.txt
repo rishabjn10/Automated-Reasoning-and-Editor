@@ -1,3 +1,4 @@
 crewai
 langtrace-python-sdk
+python-dotenv
 # Add other dependencies for your project here
