@@ -733,12 +733,14 @@ source = { editable = "." }
 dependencies = [
     { name = "crewai", extra = ["tools"] },
     { name = "langtrace-python-sdk" },
+    { name = "python-dotenv" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "crewai", extras = ["tools"], specifier = ">=0.76.9,<1.0.0" },
     { name = "langtrace-python-sdk", specifier = ">=3.3.2" },
+    { name = "python-dotenv", specifier = ">=1.0.1" },
 ]
 
 [[package]]

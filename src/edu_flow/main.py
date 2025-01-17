@@ -36,10 +36,11 @@ class EduFlow(Flow):
         output_dir = "output"
         os.makedirs(output_dir, exist_ok=True)
         
-        topic = self.input_variables.get("topic")
-        audience_level = self.input_variables.get("audience_level")
-        file_name = f"{topic}_{audience_level}.md".replace(" ", "_")
-        
+        # topic = self.input_variables.get("topic")
+        # audience_level = self.input_variables.get("audience_level")
+        # sanitized_topic = ''.join(char for char in topic if char.isalnum() or char == ' ')
+        # file_name = f"{sanitized_topic}_{audience_level}.md".replace(" ", "_")
+        file_name = "AgenticAI_data_security.md"
         output_path = os.path.join(output_dir, file_name)
         
         try:
